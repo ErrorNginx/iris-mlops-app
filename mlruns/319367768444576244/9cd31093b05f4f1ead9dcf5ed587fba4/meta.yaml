@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/agus/Documents/LAB/MLOps/mlops_pytorc_iris/mlruns/319367768444576244/9cd31093b05f4f1ead9dcf5ed587fba4/artifacts
+end_time: 1716502667181
+entry_point_name: ''
+experiment_id: '319367768444576244'
+lifecycle_stage: active
+run_id: 9cd31093b05f4f1ead9dcf5ed587fba4
+run_name: bedecked-bird-849
+run_uuid: 9cd31093b05f4f1ead9dcf5ed587fba4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716502658538
+status: 3
+tags: []
+user_id: agus
