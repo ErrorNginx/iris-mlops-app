@@ -26,11 +26,11 @@ jobs:
 
     - name: Configure Docker to use gcloud as a credential helper
       run: |
-        gcloud --quiet auth configure-docker us-central1-docker.pkg.dev
+        gcloud --quiet auth configure-docker asia-southeast2-docker.pkg.dev
       env:
         PROJECT_ID: ${{ secrets.GCP_PROJECT }}
 
     - name: Build and push Docker image
       run: |
-        docker build -t us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/my-repo/iris-mlops-app:latest .
-        docker push us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/my-repo/iris-mlops-app:latest
+        docker build -t asia-southeast2-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/testdeployment/iris-mlops-app:latest .
+        docker push asia-southeast2-docker.pkg.dev/${{ secrets.GCP_PROJECT }}/testdeployment/iris-mlops-app:latest
