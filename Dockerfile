@@ -1,18 +1,18 @@
-# Use the official Python image from the Docker Hub
-FROM python:3.9
+# Use the official Python image as the base image
+FROM python:3.9-alpine
 
 # Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Copy the entire project into the image
 COPY . /app
 
-# Install any needed packages specified in requirements.txt
+# Install the dependencies
 RUN pip install --no-cache-dir -r app/requirements.txt
 
-# Make port 8501 available to the world outside this container
+# Expose the ports for Streamlit and MLflow
 EXPOSE 8501
+EXPOSE 5000
 
-# Run app.py when the container launches
-ENTRYPOINT ["streamlit", "run"]
-CMD ["app/app.py"]
+# Command to run MLflow Tracking Server and Streamlit app
+CMD mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root /app/mlruns --host 0.0.0.0 --port 5000 & streamlit run app/app.py --server.port=8501 --server.address=0.0.0.0
