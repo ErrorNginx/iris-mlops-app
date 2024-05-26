@@ -1,6 +1,8 @@
 # Use the official Python image as the base image
 FROM python:3.9-alpine
 
+RUN pip install --upgrade pip
+
 # Set the working directory
 WORKDIR /app
 
