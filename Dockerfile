@@ -6,13 +6,11 @@ RUN pip install --upgrade pip
 # Set the working directory
 WORKDIR /app
 
-RUN apt-get update && apt-get install -y gcc
-
 # Copy the entire project into the image
 COPY . /app
 
 # Install the dependencies
-RUN pip install --no-cache-dir -r app/requirements.txt
+RUN pip install -r app/requirements.txt
 
 # Expose the ports for Streamlit and MLflow
 EXPOSE 8501
