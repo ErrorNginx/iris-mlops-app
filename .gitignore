@@ -93,6 +93,8 @@ ENV/
 venv/
 ENV/
 
+mlops-pytorc-iris-env/
+
 # Spyder project settings
 .spyderproject
 .spyproject
