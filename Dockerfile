@@ -6,6 +6,8 @@ RUN pip install --upgrade pip
 # Set the working directory
 WORKDIR /app
 
+# RUN apt-get update && apt-get install -y gcc
+
 # Copy the entire project into the image
 COPY . /app
 
