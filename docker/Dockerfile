@@ -4,11 +4,14 @@ FROM python:3.9
 # Set the working directory
 WORKDIR /app
 
+# Install gcc and other dependencies
+RUN apt-get update && apt-get install -y nginx
+
 # Copy the entire project into the image
 COPY . /app
 
 # Copy Nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY docker/nginx.conf /etc/nginx/nginx.conf
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r app/requirements.txt
