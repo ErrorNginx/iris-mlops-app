@@ -28,7 +28,3 @@ This project demonstrates a simple MLOps pipeline for training, validating, and 
    python src/app.py
    ```
 
-4. Make a prediction:
-   ```bash
-   curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d '{"features": [5.1, 3.5, 1.4, 0.2]}'
-   ```
